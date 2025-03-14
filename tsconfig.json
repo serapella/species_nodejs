@@ -3,6 +3,7 @@
     "target": "ES2022",
     "module": "Preserve",
     "strict": true,
+    "noEmit": true,
     "moduleDetection": "force",
     "allowJs": true,
     "esModuleInterop": true,
