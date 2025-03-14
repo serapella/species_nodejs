@@ -1,5 +1,4 @@
 import React, { useState, FormEvent } from "react";
-import { useNavigate } from "react-router-dom";
 
 type FormData = {
   firstName: string;
@@ -8,11 +7,9 @@ type FormData = {
   hairColor: string;
   height: string;
   gender: string;
-  comments: string;
 };
 
 export const Form: React.FC = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -20,7 +17,6 @@ export const Form: React.FC = () => {
     hairColor: "#000000",
     height: "",
     gender: "",
-    comments: "",
   });
 
   const handleSubmit = async (e: FormEvent) => {
@@ -33,7 +29,6 @@ export const Form: React.FC = () => {
       });
       if (response.ok) {
         alert("Email sent successfully!");
-        navigate("/success");
       } else {
         alert("Failed to send email");
       }
@@ -98,17 +93,6 @@ export const Form: React.FC = () => {
               {gender}
             </label>
           ))}
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="comments">Comments:</label>
-          <textarea
-            id="comments"
-            value={formData.comments}
-            onChange={(e) =>
-              setFormData({ ...formData, comments: e.target.value })
-            }
-          />
         </div>
 
         <button type="submit" className="btn">
