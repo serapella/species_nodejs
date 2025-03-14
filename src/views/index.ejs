@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verzend email</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .form-container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+      }
+
+      h2 {
+        color: #1a73e8;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-weight: 600;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: border-color 0.2s;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #1a73e8;
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      button {
+        background-color: #1a73e8;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.2s;
+      }
+
+      button:hover {
+        background-color: #1557b0;
+      }
+
+      .message {
+        margin-top: 1rem;
+        padding: 0.75rem;
+        border-radius: 4px;
+        text-align: center;
+      }
+
+      .message.success {
+        background-color: #d4edda;
+        color: #155724;
+      }
+
+      .message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Wie ben jij?</h2>
+      <form id="emailForm">
+        <div class="form-group">
+          <label for="firstName">Voornaam</label>
+          <input type="text" id="firstName" name="firstName" required />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Naam</label>
+          <input type="text" id="lastName" name="lastName" required />
+        </div>
+        <div class="form-group">
+          <label for="birthDate">Geboortedatum</label>
+          <input type="date" id="birthDate" name="birthDate" required />
+        </div>
+        <div class="form-group">
+          <label for="hairColor">Haarkleur</label>
+          <input type="color" id="hairColor" name="hairColor" required />
+        </div>
+        <div class="form-group">
+          <label for="height">Lengte (cm)</label>
+          <input type="number" id="height" name="height" required />
+        </div>
+        <div class="form-group">
+          <label>Geslacht</label>
+          <div>
+            <label>
+              <input type="radio" name="gender" value="Male" required /> Man
+            </label>
+            <label>
+              <input type="radio" name="gender" value="Female" /> Vrouw
+            </label>
+            <label> <input type="radio" name="gender" value="X" /> X </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="comments">Opmerking</label>
+          <textarea id="comments" name="comments"></textarea>
+        </div>
+        <button type="submit">Versturen</button>
+        <div class="message"></div>
+      </form>
+    </div>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
