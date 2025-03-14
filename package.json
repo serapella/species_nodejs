@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "npx tsx watch ./src/server.ts",
-    "build": "pkgroll --clean-dist --minify",
-    "start": "node dist/server.mjs"
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
